@@ -54,13 +54,13 @@ p_wid = st.sidebar.slider("Petal Width", float(iris_df["PetalWidthCm"].min()), f
 model = st.sidebar.selectbox('Model',('SVM','RFC','LR'))
 if st.sidebar.button('Predict'):
 	if model == 'SVM':
-		species=prediction(svc_model,s_len,s_wid,p_len,p_wid)
+		species1=prediction(svc_model,s_len,s_wid,p_len,p_wid)
 		score = svc_model.score(X_train,y_train)
 	if model == 'RFC':
-		species=prediction(rfc,s_len,s_wid,p_len,p_wid)
+		species1=prediction(rfc,s_len,s_wid,p_len,p_wid)
 		score = rfc.score(X_train,y_train)
 	if model == 'LR':
-		species=prediction(lr,s_len,s_wid,p_len,p_wid)
+		species1=prediction(lr,s_len,s_wid,p_len,p_wid)
 		score = lr.score(X_train,y_train)
-st.write('Species predicted is ',species)
-st.write('Accuracy of ',score)
+	st.write('Species predicted is ',species1)
+	st.write('Accuracy of ',score)
